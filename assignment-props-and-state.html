@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My Third React App</title>
+  </head>
+
+  <body>
+    <div id="root"></div>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/react/16.1.0/umd/react.development.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.1.0/umd/react-dom.development.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.min.js"></script>
+     <script type="text/babel">
+     class Welcome extends React.Component {
+       render() {
+         return <h1>Hello, {this.props.name}</h1>;
+       }
+     }
+    class ShowName extends React.Component {
+      constructor(props){
+           super(props);
+           this.state = {
+             number: 3
+           }
+         }
+
+      render() {
+        return (
+         <div>
+           <Welcome name="Mario" />
+           <Welcome name="Luigi" />
+           <Welcome name="Peach" />
+           <h3>Current students: {this.state.number}</h3>
+         </div>
+        );
+      }
+    }
+    ReactDOM.render(
+      <ShowName />,
+      document.getElementById('root')
+    );
+     </script>
+  </body>
+</html>
